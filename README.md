@@ -1,10 +1,18 @@
 # building-nu-datomic
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure project designed to learn Datomic through Datomic dev-local library.
 
 ## Usage
 
-FIXME
+### Download the dev-local library
+Go to [Datomic dev-local page](https://docs.datomic.com/cloud/dev-local.html) and follow the instruction to download and install the dev-tools.
+For this project we are using the version **1.0.243** of the dev-local library.
+
+In short, this is a Datomic library that helps you test Datomic in the local environment. It can also be useful for your CI/CD test environment, as this is a "stand alone" version of Datomic. It is important to mention that it doesn't have all Datomic Pro features available (e.g. transaction functions).
+
+### Execute the project
+
+The project was built to be executed as individual functions. This way, we recommend you to start the repl with `lein repl` and invidually run the functions in the repl to test each one individually. Enjoy :)
 
 ## License
 
