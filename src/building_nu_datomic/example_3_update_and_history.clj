@@ -35,7 +35,7 @@
 (def updated-random-order (assoc random-order :order/status :paid))
 (println updated-random-order)
 (def update-response (d/transact conn {:tx-data [updated-random-order]}))
-(clojure.pprint/pprint response)
+(clojure.pprint/pprint update-response)
 
 ;; find all
 (d/q '[:find ?id ?value ?status ?created-at
@@ -48,8 +48,8 @@
 
 ;; find before in time
 ;; get transaction date
-(def create-tx-date (.get (first (:tx-data create-response)) 2))
-(def update-tx-date (.get (first (:tx-data update-response)) 2))
+(def create-tx-date (.tx (first (:tx-data create-response))))
+(def update-tx-date (.tx (first (:tx-data update-response))))
 
 (d/q '[:find ?id ?value ?status ?created-at
        :keys id value status created-at
