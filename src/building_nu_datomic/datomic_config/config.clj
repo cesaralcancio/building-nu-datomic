@@ -10,7 +10,7 @@
 (def order-schema
   [{:db/ident       :order/id
     :db/unique      :db.unique/identity
-    :db/valueType   :db.type/uuid
+    :db/valueType   :db.type/long
     :db/cardinality :db.cardinality/one
     :db/doc         "The unique identifier of the order"}
    {:db/ident       :order/created-at

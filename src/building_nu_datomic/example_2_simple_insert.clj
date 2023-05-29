@@ -1,18 +1,19 @@
 (ns building-nu-datomic.example-2-simple-insert
   (:require [building-nu-datomic.datomic-config.config :as config]
             [datomic.client.api :as d])
-  (:import (java.util UUID Date)))
+  (:import (java.util Date)))
 
 ;; create schema
+(config/delete-database)
 (config/create-db-with-schema)
 
 ;; get the connection
 (def conn (config/conn))
 
 (def random-order
-  {:order/id         (UUID/randomUUID)
+  {:order/id         1
    :order/value      123.99M
-   :order/status     :pending-payment
+   :order/status     :pending
    :order/created-at (new Date)})
 (println random-order)
 

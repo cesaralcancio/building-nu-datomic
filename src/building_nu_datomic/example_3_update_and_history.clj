@@ -1,7 +1,7 @@
 (ns building-nu-datomic.example-3-update-and-history
   (:require [building-nu-datomic.datomic-config.config :as config]
             [datomic.client.api :as d])
-  (:import (java.util UUID Date)))
+  (:import (java.util Date)))
 
 ;; create schema
 (config/delete-database)
@@ -10,10 +10,9 @@
 ;; get the connection
 (def conn (config/conn))
 
-(def order-id (UUID/randomUUID))
 (def order-date (new Date))
 (def random-order
-  {:order/id         order-id
+  {:order/id         1
    :order/value      123.99M
    :order/status     :pending
    :order/created-at order-date})
@@ -68,4 +67,4 @@
        [?e :order/id ?id]
        [?e :order/status ?status ?tx ?op]
        [?tx :db/txInstant ?instant]]
-     (d/history (d/db conn)) order-id)
+     (d/history (d/db conn)) (:order/id random-order))
