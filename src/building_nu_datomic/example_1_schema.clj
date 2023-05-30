@@ -2,6 +2,8 @@
   (:require [building-nu-datomic.datomic-config.config :as config]))
 
 ;; Datomic Datom
+;; A datom is an immutable atomic fact that represents the addition or retraction of a relation between an entity (expressed as five-tuple).
+;; An entity is a set of datoms that are all about the same Entity number.
 ;; https://docs.datomic.com/cloud/whatis/data-model.html
 ;;
 ;; [Entity  Attribute         Value       Transaction   Operation]
