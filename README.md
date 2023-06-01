@@ -4,7 +4,13 @@ A Clojure project designed to learn Datomic through Datomic dev-local library.
 
 ## Usage
 
-### Download the dev-local library
+### Tools
+Install the following tools:
+- Leiningen (e.g. to create projects `lein new <project-name>` and run repl server `lein repl` commands)
+- IntelliJ with Cursive plugin to work with Leiningen
+- Datomic dev-local library
+
+#### Datomic dev-local library
 Go to [Datomic dev-local page](https://docs.datomic.com/cloud/dev-local.html) and follow the instruction to download and install the dev-tools.
 For this project we are using the version **1.0.243** of the dev-local library.
 
