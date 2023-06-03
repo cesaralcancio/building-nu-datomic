@@ -21,4 +21,5 @@
 ;; [4567      :db/txInstant     2023-05-28 01:10:00   4567          true]
 
 ;; Let's define the entities!
+(config/delete-database)
 (config/create-db-with-schema)
